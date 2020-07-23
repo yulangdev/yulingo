@@ -5,7 +5,6 @@
 * 이메일 : <yulang.dev@gmail.com>
 * 개발 기간 : 2020.06.16 ~ 2020.07.26
 * 기술 스택 : Spring Boot / React / Material UI / MySQL
-* Copyright 2020. 유종원 All Rights Reserved.
 
 ## 설치 및 실행
 <pre><code>
