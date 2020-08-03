@@ -52,24 +52,3 @@ create view RecordStatistic as
     round(100 * (1.84 / (pow(log(10, greatest(1, timestampdiff(minute, max(learnedDatetime), now()))), 1.25) / count(learnedDatetime) + 1.84))) as savingRate
   from Record
   group by studentId, sentenceId;
-
-/*
- * 기록 통계 상세
- */
-create view RecordDetail as
-  select
-    r.recordId        as recordId,
-    r.studentId       as studentId,
-    r.sentenceId      as sentenceId,
-    r.repeatTimes     as repeatTimes,
-    r.firstDatetime   as firstDatetime,
-    r.lastDatetime    as lastDatetime,
-    r.pastMinutes     as pastMinutes,
-    r.pastHours       as pastHours,
-    r.pastDays        as pastDays,
-    r.pastMonths      as pastMonths,
-    r.savingRate      as savingRate,
-    s.englishSentence as englishSentence,
-    s.koreanSentence  as koreanSentence
-  from RecordStatistic as r
-  join Sentence as s on r.sentenceId = s.sentenceId;

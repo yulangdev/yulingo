@@ -2,8 +2,8 @@ package kr.yulingo.controller;
 
 import kr.yulingo.repository.Record;
 import kr.yulingo.repository.RecordRepository;
-import kr.yulingo.repository.RecordDetail;
-import kr.yulingo.repository.RecordDetailRepository;
+import kr.yulingo.repository.RecordStatistic;
+import kr.yulingo.repository.RecordStatisticRepository;
 import kr.yulingo.repository.Sentence;
 import kr.yulingo.repository.SentenceRepository;
 import kr.yulingo.repository.Statistic;
@@ -30,7 +30,8 @@ public class APIController {
   @Autowired private RecordRepository recordRepository;
   @Autowired private StudentRepository studentRepository;
   @Autowired private SentenceRepository sentenceRepository;
-  @Autowired private RecordDetailRepository recordDetailRepository;
+  @Autowired private RecordStatisticRepository recordStatisticRepository;
+  // @Autowired private recordStatisticRepository recordStatisticRepository;
 
   private Student getCurrentStudent() {
     Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -43,40 +44,40 @@ public class APIController {
   public Statistic selectStatistic() {
     Student student = getCurrentStudent();
     Integer studentId = student.getStudentId();
-    List<RecordDetail> recordDetailList = recordDetailRepository.findByStudentId(studentId);
+    List<RecordStatistic> recordStatisticList = recordStatisticRepository.findByStudentId(studentId);
     List<Integer> sentenceIdList = new ArrayList<>();
     sentenceIdList.add(0);
-    for (RecordDetail recordDetail: recordDetailList)
-      sentenceIdList.add(recordDetail.getSentenceId());
+    for (RecordStatistic recordStatistic: recordStatisticList)
+      sentenceIdList.add(recordStatistic.getSentenceId());
     return new Statistic(
       student.getUsername(),
       sentenceRepository.countBySentenceIdNotIn(sentenceIdList),
-      recordDetailRepository.countByStudentIdAndSavingRateLessThan(studentId, 60.0),
-      recordDetailRepository.countByStudentId(studentId)
+      recordStatisticRepository.countByStudentIdAndSavingRateLessThan(studentId, 60.0),
+      recordStatisticRepository.countByStudentId(studentId)
     );
   }
 
   @GetMapping("/learn")
   public Sentence selectLearningSentence() {
     Integer studentId = getCurrentStudent().getStudentId();
-    List<RecordDetail> recordDetailList = recordDetailRepository.findByStudentId(studentId);
+    List<RecordStatistic> recordStatisticList = recordStatisticRepository.findByStudentId(studentId);
     List<Integer> sentenceIdList = new ArrayList<>();
     sentenceIdList.add(0);
-    for (RecordDetail recordDetail: recordDetailList)
-      sentenceIdList.add(recordDetail.getSentenceId());
+    for (RecordStatistic recordStatistic: recordStatisticList)
+      sentenceIdList.add(recordStatistic.getSentenceId());
     return sentenceRepository.findTopBySentenceIdNotIn(sentenceIdList);
   }
 
   @GetMapping("/review")
-  public RecordDetail selectReviewingSentence() {
+  public RecordStatistic selectReviewingSentence() {
     Integer studentId = getCurrentStudent().getStudentId();
-    return recordDetailRepository.findTopByStudentIdAndSavingRateLessThanOrderBySavingRateAsc(studentId, 60.0);
+    return recordStatisticRepository.findTopByStudentIdAndSavingRateLessThanOrderBySavingRateAsc(studentId, 60.0);
   }
 
   @GetMapping("/record/list")
-  public List<RecordDetail> selectRecord() {
+  public List<RecordStatistic> selectRecord() {
     Integer studentId = getCurrentStudent().getStudentId();
-    return recordDetailRepository.findByStudentIdOrderBySavingRateAsc(studentId);
+    return recordStatisticRepository.findByStudentIdOrderBySavingRateAsc(studentId);
   }
 
   @GetMapping("/record/{sentenceId}")

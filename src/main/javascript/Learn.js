@@ -101,12 +101,17 @@ export default function Learn(props) {
     fetch(url)
     .then(response => response.json())
     .then(data => {
-      let wordbank = normalize(data.englishSentence).split(' ').sort();
+      let koreanSentence = isReview ? data.sentence.koreanSentence : data.koreanSentence;
+      let englishSentence = isReview ? data.sentence.englishSentence : data.englishSentence;
+      let wordbank = normalize(englishSentence).split(' ').sort();
       setSentenceId(data.sentenceId);
-      setKoreanSentence(data.koreanSentence);
-      setEnglishSentence(data.englishSentence);
+      setKoreanSentence(koreanSentence);
+      setEnglishSentence(englishSentence);
       setMasterWordbank(wordbank);
       initQuestion(wordbank);
+    })
+    .catch(error => {
+      props.history.push("/");
     });
   }
 

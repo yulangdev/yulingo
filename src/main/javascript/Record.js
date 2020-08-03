@@ -67,14 +67,14 @@ export default function Record() {
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Badge color='error' variant='dot' invisible={item.savingRate >= 60 ? true : false}>
                 <Typography variant='subtitle2'>
-                  {item.koreanSentence}
+                  {item.sentence.koreanSentence}
                 </Typography>
               </Badge>
             </AccordionSummary>
             <Divider />
             <AccordionDetails>
               <Typography>
-                {item.englishSentence}
+                {item.sentence.englishSentence}
               </Typography>
             </AccordionDetails>
             <AccordionActions>
