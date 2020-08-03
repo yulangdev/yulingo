@@ -125,7 +125,6 @@ export default function Learn(props) {
       style.transitionDuration = `${wordbank.length * 1.10}s`;
       setProgressStyle(style);
       setTimeover(false);
-      console.log(wordbank);
       setWordbank(wordbank);
       setUserSentence('');
       userSentenceRef.current.focus();

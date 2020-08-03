@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import kr.yulingo.repository.Student;
 import kr.yulingo.repository.StudentRepository;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -21,7 +23,8 @@ public class PageController implements ErrorController {
 	}
 
 	@GetMapping("/error")
-	public String handleError() {
+	public String handleError(HttpServletResponse response) {
+		response.setStatus(200);
 		return "app";
 	}
 
@@ -35,7 +38,7 @@ public class PageController implements ErrorController {
 		if (studentRepository.findByUsername(student.getUsername()) != null)
 			return "redirect:/registration?duplicated";
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		student.setPassword("{bcrypt}" + encoder.encode(student.getPassword()));
+		student.setPassword(encoder.encode(student.getPassword()));
 		studentRepository.saveAndFlush(student);
 		return "redirect:/login?registration";
   }
