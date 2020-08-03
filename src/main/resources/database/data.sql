@@ -1,4 +1,4 @@
-insert into `Student` (`username`, `password`) values ('yulang.dev@gmail.com', '{bcrypt}$2b$10$pT3NOQThwzPeoh7fwlWEju2DMCYg5c2KqrGgjKl6tOuS37BwMSVvy');
+insert into `Student` (`username`, `password`) values ('yulang.dev@gmail.com', '$2b$10$pT3NOQThwzPeoh7fwlWEju2DMCYg5c2KqrGgjKl6tOuS37BwMSVvy');
 
 INSERT INTO `Sentence` (`englishSentence`,`koreanSentence`) VALUES ('She is holding a pen in her right hand.','여자가 오른손에 펜을 들고 있다.');
 INSERT INTO `Sentence` (`englishSentence`,`koreanSentence`) VALUES ('Glass bottles are arranged in rows.','유리병이 여러 줄로 정리되어 있다.');

@@ -67,8 +67,8 @@ export default function Login(props) {
           영어 단어 예문 암기 시스템.
         </Typography>
         <form className={classes.form} action='/login' method='post'>
-          <TextField variant='outlined' margin='normal' name='username' label='이메일' autoFocus required fullWidth />
-          <TextField variant='outlined' margin='normal' name='password' label='비밀번호' type='password' required fullWidth />
+          <TextField variant='outlined' margin='normal' name='username' label='이메일'   defaultValue='yulang.dev@gmail.com' spellCheck='false' autoFocus required fullWidth />
+          <TextField variant='outlined' margin='normal' name='password' label='비밀번호' defaultValue='111' type='password' required fullWidth />
           <Button variant='contained' color='primary' size='large' className={classes.button} fullWidth disableElevation type='submit'>
             로그인
           </Button>
