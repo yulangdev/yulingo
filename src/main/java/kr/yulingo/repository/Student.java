@@ -10,9 +10,9 @@ import javax.persistence.GenerationType;
 @Data
 @Entity
 public class Student {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer studentId;
-	private String username;
+  private String username;
   private String password;
 }
