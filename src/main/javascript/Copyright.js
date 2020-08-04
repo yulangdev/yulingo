@@ -10,7 +10,7 @@ export default function Copyright() {
         <b>E-mail:</b> <Link href='mailto:yulang.dev@gmail.com'>yulang.dev@gmail.com</Link><br />
         <b>Github:</b> <Link href='https://github.com/yulangdev/yulingo' target='_blank'>https://github.com/yulangdev/yulingo</Link><br />
         <b>Period:</b> 2020.06.16 ~ 2020.07.26<br />
-        <b>Tech:</b> Spring Boot / React / Material UI / MySQL<br /><br />
+        <b>Tech:</b> Spring Boot / React / Material UI / MySQL / JPA<br /><br />
         Copyright 2020. 유종원 All Rights Reserved.<br />
       </Typography>
     </Box>

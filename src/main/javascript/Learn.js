@@ -33,8 +33,6 @@ import red from '@material-ui/core/colors/red';
 import green from '@material-ui/core/colors/green';
 import orange from '@material-ui/core/colors/orange';
 
-import Copyright from './Copyright';
-
 const styles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
@@ -230,8 +228,6 @@ export default function Learn(props) {
           <TextField inputRef={userSentenceRef} value={userSentence} onChange={handleChange} onKeyDown={handleCheck} className={classes.textfield} id='standard-basic' label='위 영어 단어들을 조합해 문장을 완성하세요.' />          
         </CardActions>
       </Card>
-
-      <Copyright />
 
       <Dialog open={correctDialogVisible} onClose={closeCorrectDialog} onKeyDown={closeCorrectDialog} fullWidth>
         <ListItem>
