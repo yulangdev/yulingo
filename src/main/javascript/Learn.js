@@ -133,7 +133,7 @@ export default function Learn(props) {
       setWordbank(wordbank);
       setUserSentence('');
       userSentenceRef.current.focus();
-    }, 0);
+    }, 100);
   }
 
   const openCorrectDialog = () => {

@@ -40,10 +40,14 @@ export default function Record() {
                   item.pastMinutes + ' mins') + ' ago';
   }
 
-  useEffect(() => {
+  const requestRecord = () => {
     fetch('/api/record/list')
       .then(response => response.json())
       .then(json => setData(json));
+  }
+
+  useEffect(() => {
+    requestRecord();
   }, []);
 
   return (
@@ -56,7 +60,7 @@ export default function Record() {
           <Typography className={classes.title} variant='h6'>
             학습기록
           </Typography>
-          <IconButton component={RouterLink} to='/record' edge='end' color='inherit'>
+          <IconButton onClick={requestRecord} edge='end' color='inherit'>
             <RefreshIcon />
           </IconButton>
         </Toolbar>
