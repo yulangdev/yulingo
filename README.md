@@ -2,9 +2,8 @@
 에빙하우스의 망각곡선을 활용한 영어 단어 예문 암기 시스템.
 
 * 데모 사이트 : <https://yulang.dev>
-* 이메일 : <yulang.dev@gmail.com>
 * 개발 기간 : 2020.06.16 ~ 2020.07.26
-* 기술 스택 : Spring Boot / React / Material UI / MySQL
+* 기술 스택 : Spring Boot / React / Material UI / MySQL / JPA
 
 ## 설치 및 실행
 <pre><code>
