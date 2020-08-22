@@ -12,7 +12,6 @@
 <pre><code>
 $ git clone https://github.com/yulangdev/yulingo
 $ cd yulingo
-$ ./mvnw install
 $ ./mvnw package
 $ java -jar target/yulingo-0.0.1-SNAPSHOT.war
 </code></pre>
@@ -21,7 +20,7 @@ $ java -jar target/yulingo-0.0.1-SNAPSHOT.war
 <pre><code>
 $ git clone https://github.com/yulangdev/yulingo
 $ cd yulingo
-$ ./mvnw install
+$ ./mvnw package
 $ ./npm run watch
 </code></pre>
 
