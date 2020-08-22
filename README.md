@@ -1,9 +1,12 @@
 # Yulingo
-에빙하우스의 망각곡선을 활용한 영어 단어 예문 암기 시스템.
+예문을 통한 영어 단어 암기 프로그램
 
-* 데모 사이트 : <https://yulang.dev>
-* 개발 기간 : 2020.06.16 ~ 2020.07.26
-* 기술 스택 : Spring Boot / React / Material UI / MySQL / JPA
+* 인원 : 단독
+* 기간 : 약 6주
+* 프론트 엔드 : Javascript, React, React Router, Webpack, Metarial UI
+* 백엔드 : Java, Spring Boot/Security, JPA, MySQL
+* 도구 : VSCode, Maven, NPM, Git
+* 데모 : https://yulang.dev
 
 ## 설치 및 실행
 <pre><code>
@@ -12,7 +15,15 @@ $ cd yulingo
 $ ./mvnw install
 $ ./mvnw package
 $ java -jar target/yulingo-0.0.1-SNAPSHOT.war
-</pre></code>
+</code></pre>
+
+## 개발 (VSCode)
+<pre><code>
+$ git clone https://github.com/yulangdev/yulingo
+$ cd yulingo
+$ ./mvnw install
+$ ./npm run watch
+</code></pre>
 
 ## 스크린샷
 ### 로그인 & 회원가입
