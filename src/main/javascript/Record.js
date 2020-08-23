@@ -21,8 +21,6 @@ import AccordionActions from '@material-ui/core/AccordionActions';
 
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-import Copyright from './Copyright';
-
 const style = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
@@ -89,7 +87,6 @@ export default function Record() {
           </Accordion>
         )
       }
-      <Copyright />
     </Fragment>
   );
 }
