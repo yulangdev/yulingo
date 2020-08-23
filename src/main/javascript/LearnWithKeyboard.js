@@ -125,7 +125,7 @@ export default function LearnWithKeyboard(props) {
     setTimeout(() => {
       let style = getStyle();
       style.width = '0%';
-      style.transitionDuration = `${wordbank.length * 1.10}s`;
+      style.transitionDuration = `${wordbank.length * 1.10 + 3}s`;
       setProgressStyle(style);
       setTimeover(false);
       setWordbank(wordbank);
