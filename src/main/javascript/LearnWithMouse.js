@@ -120,7 +120,7 @@ export default function LearnWithMouse(props) {
     setTimeout(() => {
       let style = getStyle();
       style.width = '0%';
-      style.transitionDuration = `${wordbank.length * 1.10 + 5}s`;
+      style.transitionDuration = `${wordbank.length * 1.10 + 7}s`;
       setProgressStyle(style);
       setTimeover(false);
     }, 100);
