@@ -6,7 +6,7 @@
 * 프론트 엔드 : Javascript, React, React Router, Webpack, Metarial UI
 * 백엔드 : Java, Spring Boot/Security, JPA, MySQL
 * 도구 : VSCode, Maven, NPM, Git
-* 데모 : https://yulang.dev
+* 데모 : http://yulangdev.cafe24.com
 
 ## 설치 및 실행
 <pre><code>
