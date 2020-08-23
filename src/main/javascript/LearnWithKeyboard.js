@@ -74,7 +74,7 @@ const styles = makeStyles((theme) => ({
   },
 }));
 
-export default function Learn(props) {
+export default function LearnWithKeyboard(props) {
   const classes = styles();
   const userSentenceRef = useRef();
   const [progressStyle, setProgressStyle] = useState({});
@@ -88,7 +88,7 @@ export default function Learn(props) {
   const [masterWordbank, setMasterWordbank] = useState([]);
   const [wordbank, setWordbank] = useState([]);
   const [timeover, setTimeover] = useState(true);
-  const [isReview, setIsReview] = useState(props.location.pathname === '/review');
+  const [isReview, setIsReview] = useState(props.location.pathname.startsWith('/review'));
 
   useEffect(() => {
     requestNewSentence();
@@ -225,7 +225,7 @@ export default function Learn(props) {
           </Breadcrumbs>
         </CardContent>
         <CardActions>
-          <TextField inputRef={userSentenceRef} value={userSentence} onChange={handleChange} onKeyDown={handleCheck} className={classes.textfield} id='standard-basic' label='위 영어 단어들을 조합해 문장을 완성하세요.' />          
+          <TextField inputRef={userSentenceRef} value={userSentence} onChange={handleChange} onKeyDown={handleCheck} className={classes.textfield} id='standard-basic' label='위 영어 단어들을 조합해 문장을 완성하세요.' />
         </CardActions>
       </Card>
 

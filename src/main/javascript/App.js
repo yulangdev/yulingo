@@ -10,7 +10,8 @@ import Container from '@material-ui/core/Container';
 import Login from './Login';
 import Registration from './Registration';
 import Home from './Home';
-import Learn from './Learn';
+import LearnWithKeyboard from './LearnWithKeyboard';
+import LearnWithMouse from './LearnWithMouse';
 import Record from './Record';
 import Error from './Error';
 
@@ -38,15 +39,17 @@ function App() {
   
   return (
     <MuiThemeProvider theme={theme}>
-      <Container maxWidth='sm' className={classes.container}>
+      <Container maxWidth='xs' className={classes.container}>
         <BrowserRouter>
           <Switch>
-            <Route component={Login}        path="/login" />
-            <Route component={Registration} path="/registration" />
-            <Route component={Home}         path="/" exact />
-            <Route component={Learn}        path="/learn" />
-            <Route component={Learn}        path="/review" />
-            <Route component={Record}       path="/record" />
+            <Route component={Login}              path="/login" />
+            <Route component={Registration}       path="/registration" />
+            <Route component={Home}               path="/" exact />
+            <Route component={LearnWithKeyboard}  path="/learnWithKeyboard" />
+            <Route component={LearnWithMouse}     path="/learnWithMouse" />
+            <Route component={LearnWithKeyboard}  path="/reviewWithKeyboard" />
+            <Route component={LearnWithMouse}     path="/reviewWithMouse" />
+            <Route component={Record}             path="/record" />
             <Route component={Error} />
           </Switch>
         </BrowserRouter>
