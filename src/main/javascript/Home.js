@@ -64,7 +64,7 @@ export default function Home() {
           </Typography>
         </CardContent>
         <CardActions>
-          <ButtonGroup variant='contained' disableElevation fullWidth>
+          <ButtonGroup variant='outlined' color='primary' disableElevation fullWidth>
             <Button href={data.learn === 0 ? '' : '/learnWithKeyboard'}>키보드로 학습</Button>
             <Button href={data.learn === 0 ? '' : '/learnWithMouse'}>마우스로 학습</Button>
           </ButtonGroup>
@@ -82,7 +82,7 @@ export default function Home() {
           </Typography>
         </CardContent>
         <CardActions>
-          <ButtonGroup variant='contained' disableElevation fullWidth>
+          <ButtonGroup variant='outlined' color='primary' disableElevation fullWidth>
             <Button href={data.review === 0 ? '' : '/reviewWithKeyboard'}>키보드로 복습</Button>
             <Button href={data.review === 0 ? '' : '/reviewWithMouse'}>마우스로 복습</Button>
           </ButtonGroup>
@@ -100,7 +100,7 @@ export default function Home() {
           </Typography>
         </CardContent>
         <CardActions>
-          <ButtonGroup variant='contained' disableElevation fullWidth>
+          <ButtonGroup variant='outlined' color='primary' disableElevation fullWidth>
             <Button href={data.record === 0 ? '' : '/record'}>학습기록</Button>
           </ButtonGroup>
         </CardActions>

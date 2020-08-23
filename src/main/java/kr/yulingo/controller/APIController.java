@@ -71,13 +71,13 @@ public class APIController {
   @GetMapping("/review")
   public RecordStatistic selectReviewingSentence() {
     Integer studentId = getCurrentStudent().getStudentId();
-    return recordStatisticRepository.findTopByStudentIdAndSavingRateLessThanOrderBySavingRateAsc(studentId, 60.0);
+    return recordStatisticRepository.findTopByStudentIdAndSavingRateLessThanOrderByLastDatetimeDesc(studentId, 60.0);
   }
 
   @GetMapping("/record/list")
   public List<RecordStatistic> selectRecord() {
     Integer studentId = getCurrentStudent().getStudentId();
-    return recordStatisticRepository.findByStudentIdOrderBySavingRateAsc(studentId);
+    return recordStatisticRepository.findByStudentIdOrderByLastDatetimeDesc(studentId);
   }
 
   @GetMapping("/record/{sentenceId}")
